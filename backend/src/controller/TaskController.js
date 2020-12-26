@@ -45,7 +45,7 @@ class TaskController {
 
     /**Mostrar todos as tarefas */
     async all(req, res){
-        await TaskModel.find({ macaddress: {'$in': req.body.macaddress }})
+        await TaskModel.find({ macaddress: {'$in': req.params.macaddress }})
             .sort('when')
             .then(response => {
                 return res.status(200).json(response);
@@ -100,7 +100,7 @@ class TaskController {
         await TaskModel
         .find({
             'when': {'$lt': current},
-            'macaddress': {'$in': req.body.macaddress}
+            'macaddress': {'$in': req.params.macaddress}
         })
         .sort('when')
         .then(response => {
@@ -115,7 +115,7 @@ class TaskController {
     async Today(req, res){
         await TaskModel
         .find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             /**aonde a data seja maior ou igual que a primeira hora daquele dia do current é menor igual a ultima hora daquele dia do current */
             'when': {'$gte': startOfDay(current), '$lte': endOfDay(current)},
         })
@@ -132,7 +132,7 @@ class TaskController {
     async week(req, res){
         await TaskModel
         .find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             /**aonde a data seja maior ou igual que a primeira hora do dia da semana do current é menor igual a ultima hora do dia da semana do current */
             'when': {'$gte': startOfWeek(current), '$lte': endOfWeek(current)},
         })
@@ -149,7 +149,7 @@ class TaskController {
     async month(req, res){
         await TaskModel
         .find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             /**aonde a data seja maior ou igual que a primeira hora do dia da semana do current é menor igual a ultima hora do dia da semana do current */
             'when': {'$gte': startOfMonth(current), '$lte': endOfMonth(current)},
         })
@@ -166,7 +166,7 @@ class TaskController {
     async year(req, res){
         await TaskModel
         .find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             /**aonde a data seja maior ou igual que a primeira hora do dia da semana do current é menor igual a ultima hora do dia da semana do current */
             'when': {'$gte': startOfYear(current), '$lte': endOfYear(current)},
         })
