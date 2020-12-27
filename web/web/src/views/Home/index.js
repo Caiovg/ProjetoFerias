@@ -1,7 +1,16 @@
 import React from 'react';
+import * as S from './styles';
+//nossos componentes
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 function Home() {
-  return <h1>HOME OKAY! </h1>
+  return (
+    <S.Container>
+        <Header/>
+        <Footer/>
+    </S.Container>
+  )
 }
 
 export default Home;
