@@ -19,4 +19,31 @@ export const FilterArea = styled.div`
         background: none;
         border: none;
     }
+    button:focus{
+        outline-style: none;
+    }
+`
+
+export const Content = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
+export const Title = styled.div`
+
+    width: 100%;
+    border-bottom: 1px solid #20295F;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    h2{
+        color: #20295F;
+        position: relative;
+        top: 33px;
+        background: #fff;
+        padding: 0 15px;
+    }
 `
