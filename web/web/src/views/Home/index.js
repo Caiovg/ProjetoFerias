@@ -79,7 +79,7 @@ function Home() {
                 <TaskCard type={t.type} title={t.title} when={t.when} />
               ))
             }
-          </S.Content>  
+          </S.Content>
         <Footer/>
     </S.Container>
   )

@@ -64,5 +64,13 @@ export const RightSide = styled.div`
         content: "|";
         margin: 0 10px;
         color: #FFF
+    }   
+
+    @media(max-width: 965px){
+
+        a{
+            font-family: sans-serif;
+            font-size: 13px;
+        }
     }
 `

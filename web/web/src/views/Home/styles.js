@@ -12,6 +12,7 @@ export const FilterArea = styled.div`
     /* pesquisar sobre dps, e sobre responsividade
     flex-wrap: wrap;
     */
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 30px;
 
